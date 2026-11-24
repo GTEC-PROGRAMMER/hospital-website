@@ -1,0 +1,1355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Medicare Hospital</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            color: #333;
+        }
+
+        .navbar {
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        }
+
+        .hero {
+            background: linear-gradient(rgba(0, 123, 180, 0.8), rgba(0, 80, 140, 0.8)),
+                        url("https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=1600&q=80");
+            background-size: cover;
+            background-position: center;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+        }
+
+        .section-title {
+            font-weight: 700;
+            color: #0879b8;
+        }
+
+        .service-card {
+            border: none;
+            border-radius: 15px;
+            padding: 25px;
+            transition: 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            height: 100%;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .service-icon {
+            font-size: 45px;
+            color: #0879b8;
+        }
+
+        .doctor-card {
+            border: none;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        .doctor-card img {
+            height: 280px;
+            object-fit: cover;
+        }
+                /* ================= GALLERY ================= */
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            cursor: pointer;
+            height: 260px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.08);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 123, 180, 0.65);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-overlay i {
+            color: white;
+            font-size: 40px;
+        }
+
+
+        .appointment {
+            background: #eef9ff;
+        }
+
+        .contact-box {
+            background: #0879b8;
+            color: white;
+            border-radius: 15px;
+            padding: 30px;
+        }
+
+        footer {
+            background: #073b59;
+            color: white;
+        }
+
+        .footer-link {
+            color: #ddd;
+            text-decoration: none;
+        }
+
+        .footer-link:hover {
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<nav class="navbar navbar-expand-lg bg-white sticky-top">
+    <div class="container">
+
+        <a class="navbar-brand fw-bold text-primary fs-3" href="#">
+            <i class="bi bi-hospital"></i> Richard hospital
+        </a>
+
+        <button class="navbar-toggler" type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+
+            <ul class="navbar-nav ms-auto align-items-lg-center">
+
+                <li class="nav-item">
+                    <a class="nav-link active" href="index.html">Home</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">About</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="services.html">Services</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="doctors.html">Doctors</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="appointment.html">Appointment</a>
+                </li>
+
+                <li class="nav-item ms-lg-3">
+                    <a href="#contact" class="btn btn-primary">
+                        Contact Us
+                    </a>
+                </li>
+            
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<!-- ================= HERO ================= -->
+<section id="home" class="hero">
+
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-lg-7">
+
+                <h1>Your Health Is Our Priority</h1>
+
+                <p class="lead mt-3">
+                    Providing quality healthcare with modern technology,
+                    experienced doctors, and compassionate care.
+                </p>
+
+                <div class="mt-4">
+
+                    <a href="#appointment" class="btn btn-light btn-lg me-2">
+                        Book Appointment
+                    </a>
+
+                    <a href="#services" class="btn btn-outline-light btn-lg">
+                        Our Services
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= ABOUT ================= -->
+<section id="about" class="py-5">
+
+    <div class="container">
+
+        <div class="row align-items-center g-5">
+
+            <div class="col-lg-6">
+
+                <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1000&q=80"
+                     class="img-fluid rounded-4 shadow"
+                     alt="Hospital">
+
+            </div>
+
+            <div class="col-lg-6">
+
+                <h6 class="text-primary fw-bold">
+                    ABOUT OUR HOSPITAL
+                </h6>
+
+                <h2 class="section-title mb-3">
+                    Quality Healthcare You Can Trust
+                </h2>
+
+                <p>
+                    CarePlus Hospital is committed to providing high-quality
+                    healthcare services to patients and their families.
+                </p>
+
+                <p>
+                    Our hospital combines experienced medical professionals,
+                    advanced technology, and a patient-focused approach
+                    to deliver excellent healthcare.
+                </p>
+
+                <div class="row mt-4">
+
+                    <div class="col-6">
+                        <h3 class="text-primary">25+</h3>
+                        <p>Years Experience</p>
+                    </div>
+
+                    <div class="col-6">
+                        <h3 class="text-primary">50+</h3>
+                        <p>Expert Doctors</p>
+                    </div>
+
+                    <div class="col-6">
+                        <h3 class="text-primary">10K+</h3>
+                        <p>Happy Patients</p>
+                    </div>
+
+                    <div class="col-6">
+                        <h3 class="text-primary">24/7</h3>
+                        <p>Emergency Service</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= SERVICES ================= -->
+<section id="services" class="py-5 bg-light">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <h6 class="text-primary fw-bold">
+                OUR SERVICES
+            </h6>
+
+            <h2 class="section-title">
+                Healthcare Services
+
+            </h2>
+
+            <p class="text-muted">
+                Comprehensive medical care for you and your family.
+            </p>
+
+        </div>
+
+        <div class="row g-4">
+
+            <div class="col-md-6 col-lg-4">
+
+                <div class="service-card bg-danger text-white">
+
+                    <i class="bi bi-heart-pulse service-icon"></i>
+
+                    <h4 class="mt-3">
+                        Cardiology
+                    </h4>
+
+                    <p>
+                        Complete heart care with experienced
+                        cardiologists and modern facilities.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-6 col-lg-4">
+
+                <div class="service-card bg-white text-center">
+
+                    <i class="bi bi-emoji-smile service-icon"></i>
+
+                    <h4 class="mt-3">
+                        Pediatrics
+                    </h4>
+
+                    <p>
+                        Specialized healthcare services for
+                        infants, children, and teenagers.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-6 col-lg-4">
+
+                <div class="service-card bg-warning text-center">
+
+                    <i class="bi bi-bandaid service-icon"></i>
+
+                    <h4 class="mt-3">
+                        Orthopedics
+                    </h4>
+
+                    <p>
+                        Advanced treatment for bones, joints,
+                        muscles, and sports injuries.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-6 col-lg-4">
+
+                <div class="service-card bg-info text-center">
+
+                    <i class="bi bi-eye service-icon"></i>
+
+                    <h4 class="mt-3">
+                        Ophthalmology
+                    </h4>
+
+                    <p>
+                        Complete eye examinations and
+                        specialized eye treatments.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-6 col-lg-4">
+
+                <div class="service-card bg-light text-center">
+
+                    <i class="bi bi-capsule service-icon"></i>
+
+                    <h4 class="mt-3">
+                        Pharmacy
+                    </h4>
+
+                    <p>
+                        Convenient access to prescribed
+                        medicines and pharmaceutical services.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-6 col-lg-4">
+
+                <div class="service-card bg-success text-center">
+
+                    <i class="bi bi-truck service-icon"></i>
+
+                    <h4 class="mt-3">
+                        Emergency Care
+                    </h4>
+
+                    <p>
+                        24/7 emergency medical assistance
+                        for urgent healthcare needs.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= DOCTORS ================= -->
+<section id="doctors" class="py-5">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <h6 class="text-primary fw-bold">
+                OUR TEAM
+            </h6>
+
+            <h2 class="section-title">
+                Meet Our Doctors
+            </h2>
+
+        </div>
+
+        <div class="row g-4">
+
+            <div class="col-md-6 col-lg-4">
+
+                <div class="card doctor-card">
+
+                    <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=800&q=80"
+                         class="card-img-top"
+                         alt="Doctor">
+
+                    <div class="card-body text-center">
+
+                        <h4>Dr. Sarah Wilson</h4>
+
+                        <p class="text-primary">
+                            Cardiologist
+                        </p>
+
+                        <p class="text-muted">
+                            15+ years of medical experience.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-6 col-lg-4">
+
+                <div class="card doctor-card">
+
+                    <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=800&q=80"
+                         class="card-img-top"
+                         alt="Doctor">
+
+                    <div class="card-body text-center">
+
+                        <h4>Dr. Emily Johnson</h4>
+
+                        <p class="text-primary">
+                            Pediatrician
+                        </p>
+
+                        <p class="text-muted">
+                            Specialist in children's healthcare.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-6 col-lg-4">
+
+                <div class="card doctor-card">
+
+                    <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=800&q=80"
+                         class="card-img-top"
+                         alt="Doctor">
+
+                    <div class="card-body text-center">
+
+                        <h4>Dr. Michael Brown</h4>
+
+                        <p class="text-primary">
+                            Orthopedic Surgeon
+                        </p>
+
+                        <p class="text-muted">
+                            Expert in orthopedic treatments.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!--hospital facilities-->
+ <section id="hospital facilities" class="hospital facilities py-5 bg-dark">
+
+    <div="container" py-5">
+        <div class="text-center mb-5">
+
+            <h6 class="text-white fw-bold">
+                OUR FACILITIES
+            </h6>
+
+            <h2 class="section-title text-white">
+                Healthcare Services
+            </h2>
+
+            <p class="text-muted">
+                careplus hospital providing all the modern facilties and needs in our
+                hospital.
+            </p>
+            <div class="row g-4">
+
+            <div class="col-md-6 col-lg-4">
+
+                <div class="service-card bg-warning text-center">
+
+                    <i class="bi bi-cup-hot pantry-icon"></i>
+
+                    <h4 class="mt-3">
+                        CAFETERIA
+                    </h4>
+
+                    <p>
+                        Enjoy fresh, healthy meals, snacks,from our café.
+                    </p>
+
+                </div>
+
+            </div>
+             <div class="col-md-6 col-lg-4">
+
+                <div class="service-card bg-white text-center">
+
+                    <i class="bi bi-shop pantry-icon"></i>
+
+                    <h4 class="mt-3">
+                        CANTEEN
+                    </h4>
+
+                    <p>
+                        Enjoy fresh, healthy meals, snacks, and refreshing beverages in our comfortable hospital canteen.
+                    </p>
+
+                </div>
+
+            </div>
+             <div class="col-md-6 col-lg-4">
+
+                <div class="service-card bg-info text-center">
+
+                    <i class="bi bi-p-circle truck-icon"></i>
+
+                    <h4 class="mt-3">
+                        PARKING
+                    </h4>
+
+                    <p>
+                        We have both scooter and cars parking inside our hospital campus.
+                    </p>
+
+                </div>
+
+            </div>
+             <div class="col-md-6 col-lg-4">
+
+                <div class="service-card bg-light text-center">
+
+                    <i class="bi bi-house-heart pantry-icon"></i>
+
+                    <h4 class="mt-3">
+                        ROOMS AVAILABLE
+                    </h4>
+
+                    <p>
+                        Ac and Non ac rooms available.
+                    </p>
+
+                </div>
+
+            </div>
+             <div class="col-md-6 col-lg-4">
+
+                <div class="service-card bg-success text-center">
+
+                    <i class="bi bi-truck-front pantry-icon"></i>
+
+                    <h4 class="mt-3">
+                        AMBULANCE SERVICES
+                    </h4>
+
+                    <p>
+                        24/7 you can call us
+                    </p>
+
+                </div>
+
+            </div>
+             <div class="col-md-6 col-lg-4">
+
+                <div class="service-card bg-white text-center">
+
+                    <i class="bi bi-heart-pulse pantry-icon"></i>
+
+                    <h4 class="mt-3">
+                        ICU Care
+                    </h4>
+
+                    <p>
+                        Support of experienced doctors and technicians availble in our hospital 
+                        for your care.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+<
+
+
+<!-- ================= APPOINTMENT ================= -->
+<section id="appointment" class="appointment bg-secondary py-5">
+
+    <div class="container">
+
+        <div class="row justify-content-center">
+
+            <div class="col-lg-8">
+
+                <div class="text-center mb-4">
+
+                    <h6 class="text-white fw-bold">
+                        APPOINTMENT
+                    </h6>
+
+                    <h2 class="section-title text-white">
+                        Book an Appointment
+                    </h2>
+
+                </div>
+
+                <div class="card border-0 shadow p-4">
+
+                    <form>
+
+                        <div class="row g-3">
+
+                            <div class="col-md-6">
+
+                                <label class="form-label">
+                                    Full Name
+                                </label>
+
+                                <input type="text"
+                                       class="form-control"
+                                       placeholder="Enter your name"
+                                       required>
+
+                            </div>
+
+
+                            <div class="col-md-6">
+
+                                <label class="form-label">
+                                    Email
+                                </label>
+
+                                <input type="email"
+                                       class="form-control"
+                                       placeholder="Enter your email"
+                                       required>
+
+                            </div>
+
+
+                            <div class="col-md-6">
+
+                                <label class="form-label">
+                                    Phone
+                                </label>
+
+                                <input type="tel"
+                                       class="form-control"
+                                       placeholder="Enter phone number"
+                                       required>
+
+                            </div>
+
+
+                            <div class="col-md-6">
+
+                                <label class="form-label">
+                                    Department
+                                </label>
+
+                                <select class="form-select">
+
+                                    <option selected>
+                                        Select Department
+                                    </option>
+
+                                    <option>Cardiology</option>
+                                    <option>Pediatrics</option>
+                                    <option>Orthopedics</option>
+                                    <option>Ophthalmology</option>
+
+                                </select>
+
+                            </div>
+
+
+                            <div class="col-md-6">
+
+                                <label class="form-label">
+                                    Appointment Date
+                                </label>
+
+                                <input type="date"
+                                       class="form-control">
+
+                            </div>
+
+
+                            <div class="col-md-6">
+
+                                <label class="form-label">
+                                    Preferred Time
+                                </label>
+
+                                <input type="time"
+                                       class="form-control">
+
+                            </div>
+
+
+                            <div class="col-12">
+
+                                <label class="form-label">
+                                    Message
+                                </label>
+
+                                <textarea class="form-control"
+                                          rows="4"
+                                          placeholder="Describe your concern"></textarea>
+
+                            </div>
+
+
+                            <div class="col-12 text-center">
+
+                                <button type="submit"
+                                        class="btn btn-primary btn-lg px-5">
+                                    Book Appointment
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- ================= GALLERY ================= -->
+<section id="gallery" class="py-5 bg-light">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <h6 class="text-primary fw-bold">
+                OUR GALLERY
+            </h6>
+
+            <h2 class="section-title">
+                Explore Our Hospital
+            </h2>
+
+            <p class="text-muted">
+                Take a look at our modern facilities, comfortable rooms,
+                and advanced healthcare environment.
+            </p>
+
+        </div>
+
+
+        <div class="row g-4">
+
+            <!-- Gallery Image 1 -->
+            <div class="col-md-6 col-lg-4">
+
+                <div class="gallery-item"
+                     data-bs-toggle="modal"
+                     data-bs-target="#galleryModal"
+                     data-bs-image="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=1200&q=80">
+
+                    <img src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=800&q=80"
+                         alt="Hospital Building">
+
+                    <div class="gallery-overlay">
+                        <i class="bi bi-zoom-in"></i>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Gallery Image 2 -->
+            <div class="col-md-6 col-lg-4">
+
+                <div class="gallery-item"
+                     data-bs-toggle="modal"
+                     data-bs-target="#galleryModal"
+                     data-bs-image="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1200&q=80">
+
+                    <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=800&q=80"
+                         alt="Hospital Interior">
+
+                    <div class="gallery-overlay">
+                        <i class="bi bi-zoom-in"></i>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Gallery Image 3 -->
+            <div class="col-md-6 col-lg-4">
+
+                <div class="gallery-item"
+                     data-bs-toggle="modal"
+                     data-bs-target="#galleryModal"
+                     data-bs-image="https://images.unsplash.com/photo-1587351021759-3e566b6af7cc?auto=format&fit=crop&w=1200&q=80">
+
+                    <img src="https://images.unsplash.com/photo-1587351021759-3e566b6af7cc?auto=format&fit=crop&w=800&q=80"
+                         alt="Hospital Room">
+
+                    <div class="gallery-overlay">
+                        <i class="bi bi-zoom-in"></i>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Gallery Image 4 -->
+            <div class="col-md-6 col-lg-4">
+
+                <div class="gallery-item"
+                     data-bs-toggle="modal"
+                     data-bs-target="#galleryModal"
+                     data-bs-image="https://images.unsplash.com/photo-1538108149393-fbbd81895907?auto=format&fit=crop&w=1200&q=80">
+
+                    <img src="https://images.unsplash.com/photo-1538108149393-fbbd81895907?auto=format&fit=crop&w=800&q=80"
+                         alt="Medical Facility">
+
+                    <div class="gallery-overlay">
+                        <i class="bi bi-zoom-in"></i>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Gallery Image 5 -->
+            <div class="col-md-6 col-lg-4">
+
+                <div class="gallery-item"
+                     data-bs-toggle="modal"
+                     data-bs-target="#galleryModal"
+                     data-bs-image="https://images.unsplash.com/photo-1584982751601-97dcc096659c?auto=format&fit=crop&w=1200&q=80">
+
+                    <img src="https://images.unsplash.com/photo-1584982751601-97dcc096659c?auto=format&fit=crop&w=800&q=80"
+                         alt="Medical Equipment">
+
+                    <div class="gallery-overlay">
+                        <i class="bi bi-zoom-in"></i>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Gallery Image 6 -->
+            <div class="col-md-6 col-lg-4">
+
+                <div class="gallery-item"
+                     data-bs-toggle="modal"
+                     data-bs-target="#galleryModal"
+                     data-bs-image="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=1200&q=80">
+
+                    <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=800&q=80"
+                         alt="Healthcare Staff">
+
+                    <div class="gallery-overlay">
+                        <i class="bi bi-zoom-in"></i>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= GALLERY MODAL ================= -->
+
+<div class="modal fade"
+     id="galleryModal"
+     tabindex="-1"
+     aria-hidden="true">
+
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+
+        <div class="modal-content bg-dark border-0">
+
+            <div class="modal-header border-0">
+
+                <h5 class="modal-title text-white">
+                    CarePlus Hospital Gallery
+                </h5>
+
+                <button type="button"
+                        class="btn-close btn-close-white"
+                        data-bs-dismiss="modal">
+                </button>
+
+            </div>
+
+            <div class="modal-body text-center p-2">
+
+                <img id="galleryModalImage"
+                     src=""
+                     class="img-fluid rounded"
+                     alt="Gallery Image">
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ================= TESTIMONIALS ================= -->
+<section class="py-5">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <h6 class="text-primary fw-bold">
+                TESTIMONIALS
+            </h6>
+
+            <h2 class="section-title">
+                What Our Patients Say
+            </h2>
+
+        </div>
+
+        <div class="row g-4">
+
+            <div class="col-md-4">
+
+                <div class="card border-0 shadow-sm p-4 h-100">
+
+                    <div class="text-warning mb-3">
+                        ★★★★★
+                    </div>
+
+                    <p>
+                        "The doctors and staff were very professional
+                        and caring. I had a great experience."
+                    </p>
+
+                    <h6 class="mb-0">
+                        — John Mathew
+                    </h6>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-4">
+
+                <div class="card border-0 shadow-sm p-4 h-100">
+
+                    <div class="text-warning mb-3">
+                        ★★★★★
+                    </div>
+
+                    <p>
+                        "The hospital is clean, modern, and the
+                        appointment process was very convenient."
+                    </p>
+
+                    <h6 class="mb-0">
+                        — Priya Sharma
+                    </h6>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-4">
+
+                <div class="card border-0 shadow-sm p-4 h-100">
+
+                    <div class="text-warning mb-3">
+                        ★★★★★
+                    </div>
+
+                    <p>
+                        "The medical team took excellent care of
+                        my family. Highly professional service."
+                    </p>
+
+                    <h6 class="mb-0">
+                        — David Thomas
+                    </h6>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CONTACT ================= -->
+<section id="contact" class="py-5 bg-light">
+
+    <div class="container">
+
+        <div class="row g-4">
+
+            <div class="col-lg-5">
+
+                <div class="contact-box h-100">
+
+                    <h3>
+                        Contact Us
+                    </h3>
+
+                    <p class="mt-3">
+                        We are available to help you with
+                        your healthcare needs.
+                    </p>
+
+                    <hr>
+
+                    <p>
+                        <i class="bi bi-geo-alt-fill me-2"></i>
+                        123 Health Street, City
+                    </p>
+
+                    <p>
+                        <i class="bi bi-telephone-fill me-2"></i>
+                        +1 234 567 890
+                    </p>
+
+                    <p>
+                        <i class="bi bi-envelope-fill me-2"></i>
+                        info@richard.com
+                    </p>
+
+                    <p>
+                        <i class="bi bi-clock-fill me-2"></i>
+                        Open 24/7
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-lg-7">
+
+                <div class="card border-0 shadow-sm p-4">
+
+                    <h3>
+                        Send Us a Message
+                    </h3>
+
+                    <form class="mt-3">
+
+                        <div class="mb-3">
+
+                            <input type="text"
+                                   class="form-control"
+                                   placeholder="Your Name">
+
+                        </div>
+
+                        <div class="mb-3">
+
+                            <input type="email"
+                                   class="form-control"
+                                   placeholder="Your Email">
+
+                        </div>
+
+                        <div class="mb-3">
+
+                            <input type="text"
+                                   class="form-control"
+                                   placeholder="Subject">
+
+                        </div>
+
+                        <div class="mb-3">
+
+                            <textarea class="form-control"
+                                      rows="5"
+                                      placeholder="Your Message"></textarea>
+
+                        </div>
+
+                        <button class="btn btn-primary px-4">
+                            Send Message
+                        </button>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+<footer class="pt-5 pb-3">
+
+    <div class="container">
+
+        <div class="row g-4">
+
+            <div class="col-lg-4">
+
+                <h4>
+                    <i class="bi bi-hospital"></i>
+                    Richard Hospital
+                </h4>
+
+                <p class="mt-3 text-light">
+                    Providing trusted healthcare services
+                    with compassion and excellence.
+                </p>
+
+            </div>
+
+
+            <div class="col-lg-2">
+
+                <h5>
+                    Quick Links
+                </h5>
+
+                <ul class="list-unstyled mt-3">
+
+                    <li class="mb-2">
+                        <a href="#home" class="footer-link">
+                            Home
+                        </a>
+                    </li>
+
+                    <li class="mb-2">
+                        <a href="#about" class="footer-link">
+                            About
+                        </a>
+                    </li>
+
+                    <li class="mb-2">
+                        <a href="#services" class="footer-link">
+                            Services
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#doctors" class="footer-link">
+                            Doctors
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <div class="col-lg-3">
+
+                <h5>
+                    Services
+                </h5>
+
+                <ul class="list-unstyled mt-3">
+
+                    <li class="mb-2">Cardiology</li>
+                    <li class="mb-2">Pediatrics</li>
+                    <li class="mb-2">Orthopedics</li>
+                    <li>Emergency Care</li>
+
+                </ul>
+
+            </div>
+
+
+            <div class="col-lg-3">
+
+                <h5>
+                    Follow Us
+                </h5>
+
+                <div class="mt-3">
+
+                    <a href="#" class="text-info fs-4 me-3">
+                        <i class="bi bi-facebook"></i>
+                    </a>
+
+                    <a href="#" class="text-warning fs-4 me-3">
+                        <i class="bi bi-instagram"></i>
+                    </a>
+
+                    <a href="#" class="text-dark fs-4 me-3">
+                        <i class="bi bi-twitter-x"></i>
+                    </a>
+
+                    <a href="#" class="text-info fs-4">
+                        <i class="bi bi-linkedin"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <hr class="mt-4">
+
+        <div class="text-center">
+
+            <p class="mb-0">
+                © 2026 Richard Hospital. All Rights Reserved.
+            </p>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
